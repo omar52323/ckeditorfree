@@ -51,6 +51,7 @@ import {
 	ClassicEditor,
 	TextTransformation,
 	Underline,
+  ImageResizeEditing, ImageResizeHandles,icons,LinkImage 
 } from 'ckeditor5';
 
 
@@ -77,16 +78,36 @@ result;
 contentHtml: string = '';
 editorContent: string = '';
 public Editor = ClassicEditor;
+
+
     public config = {
-        toolbar: [ 'undo', 'redo', '|', 'bold', 'italic','insertTable', 'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor','todoList','bulletedList', 'numberedList'],
+
+      
+        toolbar: [ 'undo', 'redo', '|', 'bold', 'italic','insertTable', 'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor','todoList','bulletedList', 'numberedList','heading','alignment'],
         plugins: [
             Bold, Essentials, Italic, Mention, Paragraph, Undo,PasteFromOffice,GeneralHtmlSupport
             , Table, TableProperties, TableCellProperties, FontColor, FontBackgroundColor ,TableToolbar,TableCaption,
-            TableColumnResize,TextTransformation,Font , Image, AutoImage,TodoList,List
-        ],
+            TableColumnResize,TextTransformation,Font , Image, AutoImage,TodoList,List,Heading,ImageUpload,Alignment , ImageResizeEditing, ImageResizeHandles,TableProperties,TableCellProperties
+            , ImageToolbar, ImageCaption, ImageStyle, ImageResize,LinkImage 
+          ],
         table: {
-          contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ]
-      }
+          contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells','tableProperties','tableCellProperties' ]
+      }, 
+      image: {
+        toolbar: [ 'toggleImageCaption', 'imageTextAlternative' ,
+          'imageStyle:block',
+          'imageStyle:side',
+          'imageStyle:inline',
+          'imageTextAlternative',
+          '|',
+          'linkImage'
+        ]
+    }
+
+      
+
+
+      
         //licenseKey: 'amRyTXoxREc4MjlpQmJzdnd1dngyd1VNcEZhL3dRNUJKV05HMm45dXlPcEJWT1JtK0IwNC9CZTdjcW1Ec2c9PS1NakF5TkRFeE1EST0=',
         // mention: {
         //     Mention configuration
